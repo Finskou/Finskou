@@ -244,16 +244,6 @@ ul#nav li a:hover {
 
 /********************* Portfolio **********************/
 
-.bg-image-port{
-  background-size:cover;
-  background-image: url('..css/img/bg.png');
-  background-repeat:no-repeat;
-  background-attachment: fixed;
-  bottom:0;
-  position:relative;
-  height:200vh;
-}
-
 p {
   font-family: 'Ubuntu Condensed', sans-serif;
   font-size:1.3rem;
