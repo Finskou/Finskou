@@ -6,11 +6,11 @@ height: 100%;
  }
 
 .bg-image{
-  background-image: url('../img/piano.jpg');
+  background-image: url('../css/img/piano.jpg');
   background-size:cover;
   background-repeat: no-repeat;
   filter:blur(3px);
-  -webkit-filter: blur(3px);
+  -webkit-filter: blur(3px); 
   height:100%;
   background-attachment:fixed;
 }
