@@ -224,3 +224,20 @@ ul#nav li a:hover {
   font-size: 1em;
   overflow:auto;
 }
+
+/**********************Tools*************************/
+.bg-image-tools{
+  background-size:cover;
+  background-image: url('../css/img/bg.png');
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  bottom:0;
+  position:relative;
+}
+
+.head{
+  padding-top:10vh;
+  font-family: 'Amatic SC' ;
+  font-weight:bold;
+  font-size:4rem;
+}
