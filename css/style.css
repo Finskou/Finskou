@@ -1,0 +1,142 @@
+
+html,
+body
+ {
+height: 100%;
+ }
+
+.bg-image{
+  background-image: url('../img/piano.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  filter:blur(3px);
+  -webkit-filter: blur(3px);
+  height:100%;
+  background-attachment:fixed;
+}
+
+.bg-image-contact{
+  background-size:cover;
+  background-image: url('../img/bali.jpg');
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  filter:blur(2px);
+  -webkit-filter: blur(2px);
+  bottom:0;
+  height:100vh;
+  position:relative;
+}
+
+.bg-image-about{
+  background-size:cover;
+  background-image: url('../img/a.jpg');
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  filter:blur(2px);
+  -webkit-filter: blur(2px);
+  bottom:0;
+  height:100vh;
+  position:relative;
+}
+
+.bg-image-dead{
+  background-size:cover;
+  background-image: url('../img/dead.jpg');
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  bottom:0;
+  position:relative;
+}
+
+.profile-pic {
+  position: relative;
+  /* margin-top: 20px; */
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  float:left;
+  margin:1%;
+  border:4px solid;
+}
+
+
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.514); /* Black w/opacity/see-through */
+  color: white;
+  /* font-weight: bold; */
+  border: 3px solid #f1f1f1;
+  border-radius:3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Amatic SC' ;
+  font-size: 2em;
+  overflow:auto;
+}
+
+
+
+/* primary navigation
+--------------------------------------------------------------------- */
+
+
+/* nav-wrap */
+#nav-wrap {
+  font: 12px 'opensans-bold', sans-serif;
+  letter-spacing: 2.5px;
+  margin: 0 auto;
+  z-index: 100; 
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+#nav {
+  min-height: 50px;
+  width: 100%;
+  /* center align the menu */
+  text-align: center; 
+}
+
+ul#nav li {
+  position: relative;
+  list-style: none;
+  height: 50px;
+  display: inline-block;
+}
+
+/* Links */
+
+ul#nav li a {
+  /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
+  display: inline-block;
+  padding: 8px 13px;
+  line-height: 32px;
+  text-decoration: none;
+  text-align: left;
+  color: #fff;
+  -webkit-transition: color .2s ease-in-out;
+  -moz-transition: color .2s ease-in-out;
+  -o-transition: color .2s ease-in-out;
+  -ms-transition: color .2s ease-in-out;
+  transition: color .2s ease-in-out;
+}
+
+ul#nav li a:active {
+  background-color: transparent !important;
+}
+
+ul#nav li.current a {
+  color: #F06000;
+}
+
+ul#nav li a:hover {
+  color: #F06000;
+}
