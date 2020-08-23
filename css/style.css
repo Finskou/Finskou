@@ -252,6 +252,24 @@ p {
   transform: scale(6);
   transition:.3s;
 }
-#imgs {
-  
+
+
+/***********************Contact****************************/
+.text-contact { 
+  background-color: rgba(255, 255, 255, 0.514);
+  height:65vh;
+  color: black;
+  border: 2px solid #000000;
+  border-radius:3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Ubuntu Condensed', serif;
+  font-size: 1.4em;
+  overflow:auto;
 }
