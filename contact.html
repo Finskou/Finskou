@@ -12,13 +12,13 @@
 
 
     <body>
-        <nav class="navbar navbar-expand-lg " id="nav-wrap"  style="width:100%;height:50px;background-color:rgba(191, 191, 191, .8); z-index:100">
+        <nav class="navbar navbar-expand-lg " id="nav-wrap">
             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><i
         class="fas fa-bars fa-1x"></i></span>
             </button>
-            <div class="collapse navbar-collapse " id="navbarNav" style="width:100%;height:50px;background-color:rgba(191, 191, 191, .8)">
+            <div class="collapse navbar-collapse " id="navbarNav">
                 <ul id="nav" class="mr-auto mt-3">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Acceuil</a>
@@ -62,15 +62,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="md-form mb-0">
-                            <input type="text" id="name" name="name" class="form-control">
-                            <label for="name" class="">Nom</label>
+                            <input type="text" id="name" for="name" name="name" class="form-control" placeholder="Nom">
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="md-form mb-0">
-                            <input type="text" id="email" name="email" class="form-control">
-                            <label for="email" class="">E-mail</label>
+                            <input type="text" id="email" name="email" class="form-control" for="email" placeholder="E-mail">
                         </div>
                     </div>
                 </div>
@@ -78,8 +76,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="md-form mb-0">
-                            <input type="text" id="subject" name="subject" class="form-control">
-                            <label for="subject" class="">Sujet</label>
+                            <input type="text" id="subject" name="subject" class="form-control" for="subject" placeholder="Sujet">
                         </div>
                     </div>
                 </div>
@@ -88,15 +85,14 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="md-form">
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                            <label for="message">Message</label>
+                            <textarea type="text" id="message" name="message" for="message" placeholder="Message" rows="2" class="form-control md-textarea"></textarea>
                         </div>
                     </div>
                 </div>
             </form>
 
             <div class="text-center text-md-left">
-                <a class="btn  btn-outline-dark waves-effect" onclick="document.getElementById('contact-form').submit();">Envoyer</a>
+                <a class="btn  btn-outline-dark waves-effect" onclick="validateForm();">Envoyer</a>
             </div>
             <div class="status"></div>
         </div>
@@ -120,6 +116,57 @@
     </div>
 </section>
 </div>
+
+<script type="text/javascript">
+    function validateForm() {
+        var name = document.getElementById('name').value;
+        if(name == "") {
+            document.querySelector('.status').innerHTML = "Veuillez donner un nom.";
+            return false;
+        }
+        var email = document.getElementById('email').value;
+        if (email == "") {
+            document.querySelector('.status').innerHTML = "Veuillez mettre un email valide.";
+            return false;
+        }
+        var subject = document.getElementById('subject').value;
+        if (subject == "") {
+            document.querySelector('.status').innerHTML = " Le champs 'sujet' ne doit pas être vide.";
+            return false;
+        }
+        var message = document.getElementById('message').value;
+        if(message == "") {
+            document.querySelector('.status').innerHTML = "Le message ne peux pas être vide";
+            return false;
+        }
+        document.querySelector('.status').innerHTML = "Envoi...";
+    }
+
+
+    document.getElementById('status').innerHTML = "Envoi...";
+    formData = {
+        'name' : $('input[name=name]').val(),
+        'email': $('input[name=email]').val(),
+        'subject': $('input[name=subject]').val(),
+        'message' : $('textarea[name=message]').val()
+    };
+
+    $.ajax({
+        url : "mail.php",
+        type: "POST",
+        data: formData,
+        success: function(data, textStatus, jqXHR)
+        {
+            $('#status').text(data.message);
+            if (data.code)  // si l'email à été envoyé, reset le form
+            $('#contact-form').closest('form').find('input[type=text], textarea').val('');
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            $('#status').text(jqXHR);
+        }
+    });
+</script>
 
 <footer class="mt-5 position-fixed page-footer font-small mdb-color darken-4 w-100">
   <div class="container">
