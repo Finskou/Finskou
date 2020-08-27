@@ -248,7 +248,7 @@ ul#nav li a:hover {
 }
 
 .head{
-  padding-top:10vh;
+  padding-top:5vh;
   font-family: 'Amatic SC' ;
   font-weight:bold;
   font-size:4rem;
@@ -263,6 +263,19 @@ p {
 #imgs:active {
   transform: scale(6);
   transition:.3s;
+}
+
+.construct{
+  background-color: rgba(255, 255, 255, 0.514);
+  color: black;
+  border: 2px solid #000000;
+  border-radius:3px;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Ubuntu Condensed', serif;
+  font-size: 1.4em;
+  margin-top: 5vh;
+  width: 50%;
 }
 
 
